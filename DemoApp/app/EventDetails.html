@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" ng-app="eventsApp">
+<head>
+    <meta charset="utf-8">
+    <title>Eventage Registration</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="  " href="/css/app.css">
+</head>
+<body>
+<div class="container">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav">
+
+            </ul>
+
+        </div>
+    </div>
+    <div ng-controller="EventController">
+        <img ng-src="{{e.imgUrl}}" alt="{{e.name}}" style="padding-left:20px; padding-right:20px "/>
+        <div  class="row">
+            <div class="spannl1">
+                <h2> {{e.name}}</h2>
+                <br>{{e.Age}}
+
+            </div>
+
+        </div>
+        <div  class="row">
+            <div class="span3">
+                 <div><strong>{{e.Dob}}</strong></div>
+                 <div><strong>{{e.age}}</strong><div>
+
+            </div>
+             <div class="span4">
+               <address>
+                   <strong>Adrress:</strong><br>
+                   {{e.location.Address}}<br>
+                   {{e.location.city}},
+                   {{e.location.Province}}}
+
+               </address>
+
+             </div>
+
+
+        </div>
+             <hr/>
+             <h3>Sessions:</h3>
+                <ul class="thumbnails">
+                    <li ng-repeat="session in e.session">
+
+                    <div class="row session">
+                        <div class="span0 well votingwidget " style="float: right">
+                            <div class="VotingButton">
+
+                                <i class="icon-chevron-up icon-white" ng-click="incrementVote"></i>
+                            </div>
+                            <div class="badge bade-inverse">
+                                <div>{{session.Rate}}</div>
+
+                            </div>
+                            <div>
+                                <i class="icon-chevron-down"></i>
+                            </div>
+
+                        </div>
+                        <div class="well span9">
+
+                           <h4 class="Well-titled"> {{session.name}} </h4>
+                            <span> {{session.Story}}</span>
+                        </div>
+
+                    </div>
+
+            </li>
+
+
+                </ul>
+    </div>
+
+</div>
+<script src="/lib/bootstrap.js"></script>
+<script src="/lib/bootstrap.min.js"></script>
+<script src="/lib/jquery.min.js"></script>
+<script src="/lib/angular/angular.js"></script>
+<script src="/js/app.js"></script>
+
+<script src="/js/controllers/EventController.js"></script>
+
+
+
+</body>
+</html>
